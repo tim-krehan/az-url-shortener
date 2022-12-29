@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,5 +9,18 @@
 </head>
 <body>
   <h1>It friggin worgs. #2</h1>
+  <span id="result"></span>
+  <script>
+    $.post({
+      url: "/api/get-url",
+      data: {
+        name: "kek"
+      },
+      success: function(result){
+        console.log(result);
+        $("#result").text(result);
+      }
+    });
+  </script>
 </body>
 </html>
